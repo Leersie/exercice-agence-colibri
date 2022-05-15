@@ -3,7 +3,7 @@
     @livewireStyles
 </head>
 <body>
-@livewire('login')
+@livewire('contact')
 
 
 @livewireScripts

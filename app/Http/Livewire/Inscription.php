@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 
 class Inscription extends Component
@@ -11,6 +12,8 @@ class Inscription extends Component
     public $name;
     public $email;
     public $password;
+
+    public $loginError;
 
     protected $rules = [
         'name' => 'required|min:4|max:50',
@@ -25,10 +28,12 @@ class Inscription extends Component
 
     public function register(){
         $this->validate();
-        User::create([
+        $user = User::create([
             'name' =>$this->name,
             'email' => $this->email,
             'password' => $this->password,
             ]);
+        Auth::loginUsingId($user['id']);
+        Redirect::route("contact");
     }
 }

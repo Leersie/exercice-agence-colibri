@@ -4,31 +4,36 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
 
-class Inscription extends Component
+class login extends Component
 {
-    public $name;
     public $email;
     public $password;
 
+    public $loginError;
+
+
     protected $rules = [
-        'name' => 'required|min:4|max:50',
         'email' => 'required|email',
         'password' => 'required|min:6|max:30'
     ];
 
     public function render()
     {
-        return view('livewire.inscription');
+        return view('livewire.login');
     }
 
-    public function register(){
+    public function login(){
         $this->validate();
-        User::create([
-            'name' =>$this->name,
-            'email' => $this->email,
-            'password' => $this->password,
-            ]);
+        $user = User::where("email",$this->email)->where("password",$this->password)->first();
+
+        if($user != null) {
+            Auth::loginUsingId($user['id']);
+            Redirect::route("contact");
+        } else {
+            $this->loginError = "Cet utilisateur n'existe pas";
+        }
     }
 }

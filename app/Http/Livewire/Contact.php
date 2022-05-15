@@ -6,23 +6,35 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class login extends Component
+class Contact extends Component
 {
+    public $firstname;
+    public $lastname;
     public $email;
-    public $password;
+    public $subject;
+    public $msg;
 
     protected $rules = [
         'email' => 'required|email',
-        'password' => 'required|min:6|max:30'
+        'firstname' => "required",
+        'lastname' => "required",
+        "subject" => "required",
+        "msg" => "required"
     ];
 
     public function render()
     {
-        return view('livewire.login');
+        return view('livewire.contact');
     }
 
-    public function login(){
+    public function contact(){
         $this->validate();
-        Auth::attempt(["email"=>$this->email, "password" =>$this->password]);
+        \App\Models\Contact::create([
+            'email' => $this->email,
+            'firstname' => $this->firstname,
+            'lastname' => $this->lastname,
+            "subject" => $this->subject,
+            "message" => $this->msg
+        ]);
     }
 }

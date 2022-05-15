@@ -3,7 +3,7 @@
     @livewireStyles
 </head>
 <body>
-@livewire('inscription')
+@livewire('login')
 
 
 @livewireScripts

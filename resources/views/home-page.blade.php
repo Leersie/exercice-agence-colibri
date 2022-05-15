@@ -10,7 +10,7 @@
 <nav>
     <h1>MON SUPER SITE</h1>
     <ul>
-        <li><a href="#a-definir">Connexion</a></li>
+        <li><a href={{route('login')}}>Connexion</a></li>
         <li><a href={{route('inscription')}}>Inscription</a></li>
     </ul>
 </nav>

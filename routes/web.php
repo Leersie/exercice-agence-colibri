@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::get('/inscription', [\App\Http\Controllers\baseController::class, 'inscription'])->name("inscription");
 
+Route::get('/login', [\App\Http\Controllers\baseController::class, 'login'])->name("login");
+
+Route::get('/contact', [\App\Http\Controllers\baseController::class, 'contact'])->name("contact");
