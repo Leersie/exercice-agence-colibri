@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class homeController extends Controller
+class baseController extends Controller
 {
-    //
+    function inscription(){
+        return view('inscription');
+    }
 }

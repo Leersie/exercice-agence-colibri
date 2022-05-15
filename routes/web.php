@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home-page');
 });
+
+Route::get('/inscription', [\App\Http\Controllers\baseController::class, 'inscription'])->name("inscription");
+
