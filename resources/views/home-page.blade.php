@@ -11,8 +11,8 @@
 <nav  class="bg-gray-400 flex sm:justify-between text-white px-5 h-16 items-center">
     <h1 >MON SUPER SITE</h1>
     <ul class="flex">
-        <li class="pl-16 hover:bg-gray-300 rounded"><a href={{route('login')}}>Connexion</a></li>
-        <li class="pl-5 hover:bg-gray-300 rounded"><a href={{route('inscription')}}>Inscription</a></li>
+        <li class="ml-16 px-1 hover:bg-gray-300 rounded"><a href={{route('login')}}>Connexion</a></li>
+        <li class="ml-5 px-1 hover:bg-gray-300 rounded"><a href={{route('inscription')}}>Inscription</a></li>
     </ul>
 </nav>
 
