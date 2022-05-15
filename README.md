@@ -1,8 +1,8 @@
 # exercice-agence-colibri
-Serveur en mysql
+The server is in MySql
 
-Ne pas oublier de changer l'adresse et le nom de la database pour la votre dans le .env.
+Don't forget to change the address and the database name (with yours) in the file .env
 
-Puis faire "php artisan migrate:refresh" pour remplir la BDD.
+Then enter "php artisan migrate:refresh" to fill the db.
 
-Puis "php artisan serve" pour lancer le site
+Then enter "php artisan serve" to launch the website
